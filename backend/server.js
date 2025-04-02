@@ -2,6 +2,7 @@ import express from 'express';
 import colors from 'colors';
 import dotenv from 'dotenv';
 dotenv.config();
+import connectDb from './config/db.js';
 
 const PORT = process.env.PORT || 5000;
 
@@ -16,4 +17,5 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running now on port ${PORT}`.bgYellow.underline.bold);
+  connectDb();
 });
