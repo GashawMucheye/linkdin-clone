@@ -19,7 +19,7 @@ npm i express-async-handler
 
 10.create errorMiddleware.js
 
-11. using cloudinary in order upload images and banner image
+11.using cloudinary in order upload images and banner image
 
 ```js
 npm i cloudinary
@@ -27,3 +27,12 @@ npm i cloudinary
 ```
 
 12.configure cloudinary
+
+13.sending welcome email on sign up using nodemailer.
+
+14.createWelcomeEmailTemplate
+15 .creating Post
+
+- create Post Model
+- create Post Controller
+- create Post route
