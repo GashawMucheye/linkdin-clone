@@ -7,6 +7,7 @@ import connectDb from './config/db.js';
 import authRoute from './routes/authRoute.js';
 import userRoutes from './routes/userRoute.js';
 import postRoutes from './routes/postRoute.js';
+import notificationRoutes from './routes/notificationRoute.js';
 import cookieParser from 'cookie-parser';
 import errorHandler from './middleware/errorMiddleware.js';
 
@@ -20,6 +21,7 @@ app.use(cookieParser());
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/posts', postRoutes);
+app.use('/api/v1/notifications', notificationRoutes);
 app.use(errorHandler);
 
 app.get('/', (_, res) => {

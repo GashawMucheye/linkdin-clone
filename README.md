@@ -36,3 +36,9 @@ npm i cloudinary
 - create Post Model
 - create Post Controller
 - create Post route
+
+16 . create notification:
+
+- create notification model
+- create notification controller
+- create notification route
