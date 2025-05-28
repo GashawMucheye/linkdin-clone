@@ -1,4 +1,5 @@
 import cloudinary from '../config/cloudinary.js';
+import { createCommentNotificationEmailTemplate } from '../emails/emailTemplates.js';
 import Post from '../models/postModel.js';
 import asyncHandler from 'express-async-handler';
 
@@ -93,21 +94,31 @@ const createComment = asyncHandler(async (req, res) => {
 
     await newNotification.save();
 
-    try {
-      const postUrl = process.env.CLIENT_URL + '/post/' + postId;
-      await sendCommentNotificationEmail(
-        post.author.email,
-        post.author.name,
-        req.user.name,
-        postUrl,
-        content
+    const postUrl = process.env.CLIENT_URL + '/post/' + postId;
+    transporter
+      .sendMail(
+        defineMailOptions(
+          user.email,
+          'You have a new comment on your post',
+          createCommentNotificationEmailTemplate(
+            post.author.email,
+            post.author.name,
+            req.user.name,
+            postUrl,
+            content
+          )
+        )
+      )
+      .then((info) =>
+        console.log(
+          'ending comment notification email successfully:',
+          info.response
+        )
+      )
+      .catch((err) =>
+        console.error('Error in sending comment notification email:', err)
       );
-    } catch (error) {
-      console.log('Error in sending comment notification email:', error);
-    }
   }
-
-  res.status(200).json(post);
 });
 
 const likePost = asyncHandler(async (req, res) => {

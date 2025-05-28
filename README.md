@@ -42,3 +42,25 @@ npm i cloudinary
 - create notification model
 - create notification controller
 - create notification route
+
+  17.create connectionRequest
+
+- create connectionRequest model
+- create connectionRequest controller
+- create connectionRequest route
+
+18. create react app for frontend by using create vite command.
+
+````js
+npm i create-vite@latest
+```
+19. install dependencies for react app.
+
+```js
+npm i react-router-dom
+npm i axios
+
+```
+
+
+````
