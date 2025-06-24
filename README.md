@@ -61,6 +61,13 @@ npm i react-router-dom
 npm i axios
 
 ```
+20. install tanstack/react-query
+
+```js
+
+npm i @tanstack/react-query
+
+```
 
 
 ````

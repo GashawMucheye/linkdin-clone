@@ -10,7 +10,6 @@ import postRoutes from './routes/postRoute.js';
 import notificationRoutes from './routes/notificationRoute.js';
 import cookieParser from 'cookie-parser';
 import errorHandler from './middleware/errorMiddleware.js';
-
 const PORT = process.env.PORT || 5000;
 
 const app = express();
